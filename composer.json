@@ -1,13 +1,17 @@
 {
-    "name": "cnvs/paper-dark",
-    "description": "Canvas Dark Theme",
-    "keywords": ["canvas", "theme", "dark"],
+    "name": "mpandar/blue-brief",
+    "description": "Canvas Dark Theme By Mpandar",
+    "keywords": [
+        "canvas",
+        "theme",
+        "dark"
+    ],
     "type": "canvas-theme",
     "license": "MIT",
     "authors": [
         {
-            "name": "Patrick Reid",
-            "email": "reliq@reliqarts.com"
+            "name": "Blue Brief",
+            "email": "mshp_2007@126.com"
         }
     ],
     "require": {
@@ -15,7 +19,7 @@
     },
     "extra": {
         "canvas-theme": {
-            "title": "Paper Dark",
+            "title": "Mpandar Blue Brief",
             "directories": {
                 "public": "public",
                 "views": "resources/views"
