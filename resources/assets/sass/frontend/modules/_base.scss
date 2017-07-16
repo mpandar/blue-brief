@@ -1,5 +1,7 @@
 // Brand
-
+body {
+    border-top: $dark-color 3px solid;
+}
 // Mixins
 @mixin transition-all() {
     -webkit-transition: all 0.5s;
@@ -15,7 +17,7 @@
 }
 
 @mixin serif() {
-    font-family: 'Lora', 'Times New Roman', serif;
+    font-family: 'Monda', "PingFang SC", "Microsoft YaHei", 'sans-serif';
 }
 
 @mixin sans-serif() {
@@ -24,7 +26,7 @@
 
 // Typography
 @font-face {
-    font-family: 'Unthrift First Personal';
+    font-family: 'Monda', "PingFang SC", "Microsoft YaHei", 'sans-serif';
     src: url('/vendor/canvas/assets/fonts/unthriftfirstpersonal.eot'); /* IE9 Compat Modes */
     src: url('/vendor/canvas/assets/fonts/unthriftfirstpersonal.woff2') format('woff2'), /* Super Modern Browsers */
     url('/vendor/canvas/assets/fonts/unthriftfirstpersonal.woff') format('woff'), /* Pretty Modern Browsers */

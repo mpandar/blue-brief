@@ -4,11 +4,9 @@
         background-color: lighten($dark-color, 5%) !important;
         border-radius: 2em;
         font-size: 14px !important;
-        color: #fff;
-        padding: .5em 1em;
-        text-shadow: 1px 1px #888;
-        transition: 1s all linear;
-
+        color: $white;
+        padding: .5em 0.7em;
+        text-decoration: none;
     }
 
     &.affix-top {

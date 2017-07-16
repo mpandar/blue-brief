@@ -1,6 +1,6 @@
 const elixir = require('laravel-elixir');
 
-require('laravel-elixir-vue-2');
+// require('laravel-elixir-vue-2');
 
 var assetsPath = 'public/assets/';
 
@@ -15,8 +15,8 @@ elixir(function (mix) {
 
     // Version the assets
     mix.version([
-            // CSS files
-            assetsPath + 'css/frontend.css',
-            assetsPath + 'css/backend.css',
-        ]);
+        // CSS files
+        assetsPath + 'css/frontend.css',
+        assetsPath + 'css/backend.css',
+    ]);
 });

@@ -1,0 +1,44 @@
+.brand {
+    min-width: 13rem;
+}
+.brand-wrapper {
+    background: $dark-color;
+    text-align: center;
+    padding: 20px 0;
+    h1, h3 {
+        padding:0;
+        margin: 0;
+    }
+    h1 {
+        a {
+            text-decoration: none;
+            color: $white;
+            font-size: 2rem;
+            &:visited ,&hover, &focus {
+                color: $white
+            }
+        }
+        color: $white;
+    }
+    h3 {
+        color:$white-little-color;
+        font-size: 0.8rem;
+        line-height: 1.5rem;
+    }
+}
+
+.brand-footer-wrapper {
+    background:$white;
+    margin: 10px 0px;
+    text-align: center;
+    a {
+        color: $dark-color;
+        &visited {
+            color: $dark-color;
+        }
+        &hover ,&hocus {
+            color: $dark-light-color;
+        }
+    }
+
+}

@@ -1,18 +1,18 @@
-<ul class="pager">
+<ul class="pager row">
     {{-- Reverse direction --}}
     @if ($reverse_direction)
         @if ($posts->currentPage() > 1)
             <li class="previous">
                 <a href="{!! $posts->url($posts->currentPage() - 1) !!}">
                     <i class="fa fa-angle-left fa-lg"></i>
-                    Previous {{ $tag->tag }}
+                    上 {{ $tag->tag }}
                 </a>
             </li>
         @endif
         @if ($posts->hasMorePages())
             <li class="next">
                 <a href="{!! $posts->nextPageUrl() !!}">
-                    Next {{ $tag->tag }}
+                    下 {{ $tag->tag }}
                     <i class="fa fa-angle-right"></i>
                 </a>
             </li>
@@ -22,14 +22,25 @@
             <li class="previous">
                 <a href="{!! $posts->url($posts->currentPage() - 1) !!}">
                     <i class="fa fa-angle-left fa-lg"></i>
-                    Newer {{ $tag ? $tag->tag : '' }}
+                    上一页 {{ $tag ? $tag->tag : '' }}
                 </a>
             </li>
         @endif
+        <?php 
+            $start = $posts->currentPage() < 3 ? 1 : ($posts->currentPage()-1);
+            $end = ($start + 3) > $posts->total()?$posts->total():($start + 3);
+        ?>
+        @for ($i = $start; $i <= $end; $i++)
+            <li class="{!! $posts->currentPage()==$i?'current-page disabled':'' !!}">
+                <a href="{!! $posts->url($i) !!}">
+                    &nbsp;{{ $i }}&nbsp;
+                </a>
+            </li>
+        @endfor
         @if ($posts->hasMorePages())
             <li class="next">
                 <a href="{!! $posts->nextPageUrl() !!}">
-                    Older {{ $tag ? $tag->tag : '' }}
+                    下一页 {{ $tag ? $tag->tag : '' }}
                     <i class="fa fa-angle-right"></i>
                 </a>
             </li>

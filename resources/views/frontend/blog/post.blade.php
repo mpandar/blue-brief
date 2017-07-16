@@ -22,7 +22,7 @@
                     @endif
                     <h1 class="post-page-title">{{ $post->title }}</h1>
                     <p class="post-page-meta">
-                        {{ \Carbon\Carbon::parse($post->published_at)->diffForHumans() }} &#183; {{ $post->readingTime() }} MIN READ
+                        {{ \Carbon\Carbon::parse($post->published_at)->diffForHumans() }} &#183; {{ $post->readingTime() }}分钟
                         @if ($post->tags->count())
                             <br>
                             {!! join(' ', $post->tagLinks()) !!}
@@ -41,6 +41,12 @@
     </article>
 
     @include('canvas::frontend.blog.partials.paginate-post')
+    <div class="container">
+        @if(!empty(\Canvas\Models\Settings::disqus()))
+            @include('canvas::frontend.blog.partials.changyan')
+        @endif
+    </div>
+        
 @stop
 
 @section('unique-js')

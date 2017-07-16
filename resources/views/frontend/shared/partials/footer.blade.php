@@ -1,21 +1,16 @@
-<div class="container">
-    @if(!empty(\Canvas\Models\Settings::disqus()))
-        @include('canvas::frontend.blog.partials.disqus')
-    @endif
-    <div style="text-align: center">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <hr>
-                <p class="small">Proudly powered by <a href="https://cnvs.io" target="_blank">Canvas</a> &#183; <a href="{!! route('canvas.admin') !!}"><i class="fa fa-lock"></i> Sign In</a>
-                </p>
-            </div>
-        </div>
-    </div>
+<div class="row footer">
+    <p>© 2017 - 2017  MaStone<br>
+    本网站由
+        <a href="https://canvas.toddaustin.io" target="_blank"><span>Canvas</span></a> 强力驱动 · 
+        主题 <a href="https://github.com/mpandar/blue-brief" target="_blank"><span>Blue Brief</span></a> · 
+        <a href="{!! route('canvas.admin') !!}"><i class="fa fa-lock">&nbsp;&nbsp;</i><span>登录</span></a>
+    </p>
 </div>
+
 
 <!-- scroll to top button -->
 <span id="top-link-block" class="hidden hover-button">
-    <a id="scroll-to-top" href="#top">SCROLL TO TOP</a>
+    <a id="scroll-to-top" href="#top">↑</a>
 </span>
 
 @if (!empty(\Canvas\Models\Settings::gaId()))

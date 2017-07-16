@@ -1,19 +1,20 @@
-@foreach ($posts as $post)
+@foreach ($posts as $key=>$post)
     <div class="post-preview">
         <h2 class="post-title">
             <a href="{{ $post->url($tag) }}">{{ $post->title }}</a>
         </h2>
         <p class="post-meta">
-            {{ $post->published_at->diffForHumans() }} &#183; {{ $post->readingTime() }} MIN READ
-            <br>
+            {{ $post->published_at->diffForHumans() }} &#183; {{ $post->readingTime() }}分钟 
             @unless( $post->tags->isEmpty())
-                {!! implode(' ', $post->tagLinks()) !!}
+                &nbsp;&nbsp;&nbsp;{!! implode(' ', $post->tagLinks()) !!}
             @endunless
         </p>
         <p class="postSubtitle">
             {{ str_limit($post->subtitle, config('blog.frontend_trim_width')) }}
         </p>
-        <p style="font-size: 13px"><a href="{{ $post->url($tag) }}">READ MORE...</a></p>
+        <p class="post-readmore"><a href="{{ $post->url($tag) }}">阅读全文 »</a></p>
     </div>
+    @if ($key != count($posts)-1)
     <hr>
+    @endif
 @endforeach

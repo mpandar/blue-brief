@@ -1,0 +1,16 @@
+.footer {
+    justify-content: center;
+    text-align: center;
+    color: $white-weight-color;
+    * {
+        font-size: 0.8rem;
+    }
+    a {
+        color:$dark-light-color;
+        text-decoration: none;
+        span {
+            border-bottom: $dark-light-color 1px solid;
+            padding-bottom: 4px;
+        }
+    }
+}
