@@ -2303,7 +2303,7 @@ body {
 
 .pager {
   margin: 10px 0 10px 0;
-  border-top: solid 1px #f5f7f9;
+  border-top: solid 1px #eeeeee;
   padding-top: 30px;
   display: -webkit-box;
   display: flex;
@@ -2331,13 +2331,13 @@ body {
 }
 
 .pager li a:hover {
-  color: #f5f7f9;
+  color: #eeeeee;
   background: #222;
 }
 
 .pager li.current-page {
   color: #222;
-  background: #f5f7f9;
+  background: #eeeeee;
 }
 
 .pager .disabled > a,
@@ -2373,6 +2373,10 @@ body {
 .content-wrap > hr {
   width: 3rem;
   margin: 0 auto;
+}
+
+.content-wrap .row {
+  flex-basis: 100%;
 }
 
 @media only screen and (max-width: 767px) {
@@ -2452,7 +2456,7 @@ body {
 }
 
 .post-preview > .post-readmore > a:hover, .post-preview > .post-readmore > a:focus {
-  color: #f5f7f9;
+  color: #eeeeee;
   text-decoration: none;
   background: #222;
 }
@@ -2491,6 +2495,160 @@ body {
   font-size: 16px;
 }
 
+.tags {
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+.tags .title {
+  -webkit-box-pack: center;
+  justify-content: center;
+  line-height: 5rem;
+  color: #222;
+  flex-basis: 60%;
+  border-bottom: solid 1px #eeeeee;
+}
+
+.tags a {
+  margin: 1rem 2rem;
+  text-decoration: none;
+  color: #555;
+}
+
+.tags a span {
+  border-bottom: solid 1px #555;
+  padding-bottom: 0.3rem;
+}
+
+.tag {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.tag-link {
+  width: 60%;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  height: 4rem;
+  border-bottom: solid 1px #eeeeee;
+  border-top: solid 1px #eeeeee;
+}
+
+.tag-link a, .tag-link a:visited {
+  color: #222;
+  text-decoration: none;
+}
+
+.tag-link a span, .tag-link a:visited span {
+  border-bottom: solid 1px #222;
+  padding-bottom: 0.3rem;
+}
+
+.tag-subtitle {
+  text-align: center;
+  font-style: italic;
+  color: #999999;
+  margin: 0;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.times {
+  display: -webkit-box;
+  display: flex;
+  margin: 15px 0;
+  width: 100%;
+}
+
+/*首先，我们要创建一个容器class*/
+.times ul {
+  margin-left: 25px;
+  border-left: 0.2rem solid #eeeeee;
+  width: 100%;
+}
+
+/*利用ul标签的特性，设置外边框左移25px，左边边框是2px粗的实心线，颜色一般要浅一点*/
+.times ul li {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  display: -webkit-box;
+  display: flex;
+  width: 100%;
+  margin-left: -28px;
+  line-height: 20px;
+  font-weight: narmal;
+}
+
+/*一般情况，通过li标签控制圆点回到时间线上，然后控制要出现的文字大小和是否粗体*/
+.times ul li b {
+  width: 9px;
+  height: 9px;
+  background: #999;
+  border: none;
+  margin: 6px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  overflow: hidden;
+  display: inline-block;
+  float: left;
+}
+
+/*利用处理加粗以外没有其它特别属性b标签做时间轴的圆点。*/
+.times ul li {
+  transition: all 2s ease-in-out;
+}
+
+.times ul li > div {
+  padding: 1rem 2rem 0.6rem;
+  border-bottom: #999 dashed 1px;
+  margin-left: 0.8rem;
+  color: #555;
+}
+
+.times ul li > div a {
+  margin: 0;
+}
+
+.times ul li > span {
+  font-size: 12px;
+  line-height: 20px;
+  color: #555;
+  padding: 3rem 0;
+}
+
+.times ul li > span span {
+  padding-left: 1rem;
+}
+
+.times ul li:first-child > span {
+  padding: 0 0 3rem 0;
+}
+
+/*设置span标签的属性，让它来做时间显示，加一点边距，使时间显示离时间线远一点*/
+.times ul li:hover b {
+  background: #555;
+}
+
+/*注意这一行，前面的li标签后面加了一个:hover伪属性，意思是鼠标移上来，激活后面的属性，这样可以设置鼠标移动到整个时间范围的时候，时间点和时间显示会变色*/
+.times ul li:hover span {
+  color: #555;
+}
+
+/*同上*/
+.times ul li p {
+  padding-left: 15px;
+  font-size: 14px;
+  line-height: 25px;
+}
+
+/*这里利用段落标签p做文字介绍*/
 code, code[class*=language-], pre, pre[class*=language-] {
   border: none;
   background-color: #272822 !important;
@@ -2565,7 +2723,7 @@ code, code[class*=language-] {
 }
 
 .brand-wrapper h3 {
-  color: #f5f7f9;
+  color: #eeeeee;
   font-size: 0.8rem;
   line-height: 1.5rem;
 }
@@ -2592,6 +2750,10 @@ code, code[class*=language-] {
   border: none;
   margin: 0;
   padding: 10px 0;
+  transition-property: padding;
+  transition-duration: 2s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
 }
 
 .nav li {
@@ -2599,7 +2761,8 @@ code, code[class*=language-] {
 }
 
 .nav li:hover, .nav li:focus {
-  background-color: #f5f7f9;
+  background-color: #eeeeee;
+  transition: background-color 1s;
 }
 
 .nav li a {
@@ -2652,14 +2815,8 @@ code, code[class*=language-] {
 
 #top-link-block.affix {
   position: fixed;
-  bottom: 18px;
-  right: 10px;
-}
-
-@media only screen and (max-width: 680px) {
-  #top-link-block.affix {
-    right: calc(50% - 4em);
-  }
+  bottom: 4rem;
+  right: 2rem;
 }
 
 /*# sourceMappingURL=frontend.css.map */

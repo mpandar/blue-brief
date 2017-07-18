@@ -14,28 +14,28 @@
     <article>
         <div class="container" id="post">
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-preview">
                     @if ($post->page_image)
                         <div class="text-center">
                             <img src="{{ asset($post->page_image) }}" class="post-hero">
                         </div>
                     @endif
-                    <h1 class="post-page-title">{{ $post->title }}</h1>
-                    <p class="post-page-meta">
-                        {{ \Carbon\Carbon::parse($post->published_at)->diffForHumans() }} &#183; {{ $post->readingTime() }}分钟
-                        @if ($post->tags->count())
-                            <br>
-                            {!! join(' ', $post->tagLinks()) !!}
-                        @endif
+                    <h2 class="post-title">
+                        <a href="{{ $post->url($tag) }}">{{ $post->title }}</a>
+                    </h2>
+                    <p class="post-meta">
+                        {{ $post->published_at->diffForHumans() }} &#183; {{ $post->readingTime() }}分钟 
+                        @unless( $post->tags->isEmpty())
+                            &nbsp;&nbsp;&nbsp;{!! implode(' ', $post->tagLinks()) !!}
+                        @endunless
                     </p>
-
-                    {!! $post->content_html !!}
-
-                    <p class="dts"><span>&#183;</span><span>&#183;</span><span>&#183;</span></p>
-
-                    @include('canvas::frontend.blog.partials.author')
-
+                    <p class="postSubtitle">
+                        {!! $post->content_html !!}
+                    </p>
                 </div>
+
+                    {{--  @include('canvas::frontend.blog.partials.author')  --}}
+
             </div>
         </div>
     </article>

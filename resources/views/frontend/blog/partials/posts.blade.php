@@ -10,7 +10,7 @@
             @endunless
         </p>
         <p class="postSubtitle">
-            {{ str_limit($post->subtitle, config('blog.frontend_trim_width')) }}
+            {!! CanvasHelper::closeAllHtmlTags(str_limit($post->content_html, config('blog.frontend_trim_width'))) !!}
         </p>
         <p class="post-readmore"><a href="{{ $post->url($tag) }}">阅读全文 »</a></p>
     </div>

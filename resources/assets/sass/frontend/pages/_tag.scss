@@ -1,9 +1,42 @@
+.tags {
+  justify-content: center;
+  .title {
+    justify-content: center;
+    line-height: 5rem;
+    color:$dark-color;
+    flex-basis: 60%;
+    border-bottom: solid 1px $white-little-color;
+  }
+  a {
+    margin: 1rem 2rem;
+    text-decoration: none;
+    color: $dark-light-color;
+    span {
+      border-bottom: solid 1px $dark-light-color;
+      padding-bottom: 0.3rem;
+    }
+  }
+}
+.tag {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 .tag-link {
-  text-align: center;
-  margin: 0;
-  font-size: 14px;
-  text-transform: uppercase;
-  font-family: 'Source Sans Pro', sans-serif !important;
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+  border-bottom: solid 1px $white-little-color;
+  border-top: solid 1px $white-little-color;
+  a,a:visited {
+    color: $dark-color;
+    text-decoration: none;
+    span {
+      border-bottom: solid 1px $dark-color;
+      padding-bottom: 0.3rem;
+    }
+  }
 }
 
 .tag-subtitle {
@@ -13,5 +46,38 @@
   margin: 0;
   font-size: 13px;
   text-transform: uppercase;
-  font-family: 'Source Sans Pro', sans-serif !important;
 }
+
+
+.times {display:flex;margin:15px 0;width: 100%;}/*首先，我们要创建一个容器class*/
+.times ul {margin-left:25px;border-left:0.2rem solid $white-little-color;width: 100%;}/*利用ul标签的特性，设置外边框左移25px，左边边框是2px粗的实心线，颜色一般要浅一点*/
+.times ul li {    flex-direction: column;display:flex;width:100%;margin-left:-28px;line-height:20px;font-weight:narmal;}/*一般情况，通过li标签控制圆点回到时间线上，然后控制要出现的文字大小和是否粗体*/
+.times ul li b {width:9px;height:9px;background:$white-weight-color;border:none;margin:6px;border-radius:6px;-webkit-border-radius:6px;-moz-border-radius:6px;overflow:hidden;display:inline-block;float:left;}/*利用处理加粗以外没有其它特别属性b标签做时间轴的圆点。*/
+.times ul li {
+  transition:all 2s ease-in-out;
+  > div {
+    padding: 1rem 2rem 0.6rem;
+    border-bottom: $white-weight-color dashed 1px;
+    margin-left: 0.8rem;
+    color: $dark-light-color;
+    a{
+      margin: 0;
+    }
+  }
+  > span {
+    font-size:12px;line-height:20px;color:$dark-light-color;
+    padding: 3rem 0;
+    span{
+      padding-left:1rem;
+    }
+  }
+  &:first-child {
+    > span {
+      padding: 0 0 3rem 0;
+    }
+  }
+}/*设置span标签的属性，让它来做时间显示，加一点边距，使时间显示离时间线远一点*/
+
+.times ul li:hover b {background:$dark-light-color;}/*注意这一行，前面的li标签后面加了一个:hover伪属性，意思是鼠标移上来，激活后面的属性，这样可以设置鼠标移动到整个时间范围的时候，时间点和时间显示会变色*/
+.times ul li:hover span {color:$dark-light-color;}/*同上*/
+.times ul li p {padding-left:15px;font-size:14px;line-height:25px;}/*这里利用段落标签p做文字介绍*/

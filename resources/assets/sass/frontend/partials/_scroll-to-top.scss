@@ -17,11 +17,11 @@
 
     &.affix {
         position: fixed;
-        bottom: 18px;
-        right: 10px;
+        bottom: 4rem;
+        right: 2rem;
 
         @media only screen and (max-width: 680px) {
-            right: calc(50% - 4em);
+            //right: calc(50% - 4em);
         }
 
     }
